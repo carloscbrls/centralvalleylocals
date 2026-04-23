@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add your business to Central Valley Locals directory. Free listing for local businesses in Manteca, Modesto, Stockton, Tracy.">
+    <title>Add Your Business | Central Valley Locals</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/submit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">📍</span>
+                    <span class="logo-text">Central Valley Locals</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html#categories">Browse</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="submit-page">
+        <div class="container">
+            <div class="submit-header">
+                <h1>Add Your Business</h1>
+                <p class="submit-subtitle">Join Central Valley's trusted local business network. Free listing for verified local businesses.</p>
+            </div>
+
+            <div class="submit-benefits">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✓</span>
+                    <h3>Free Listing</h3>
+                    <p>Basic listings are always free for local businesses</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⭐</span>
+                    <h3>Verified Badge</h3>
+                    <p>We verify every business before listing</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤝</span>
+                    <h3>Networking</h3>
+                    <p>Connect with other local businesses</p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="business-submit-form" class="submit-form" name="business-submission" netlify netlify-honeypot="bot-field" action="/thank-you">
+                    <input type="hidden" name="form-name" value="business-submission">
+                    <p class="hidden" style="display:none;">
+                        <label>Don't fill this out: <input name="bot-field"></label>
+                    </p>
+                    <input type="hidden" name="submission_date" id="submission_date">
+                    <input type="hidden" name="source" value="centralvalleylocals.com">
+
+                    <section class="form-section">
+                        <h2>Business Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="business_name">Business Name *</label>
+                            <input type="text" id="business_name" name="business_name" required placeholder="e.g., Faith RLR LLC">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="business_type">Business Type *</label>
+                            <select id="business_type" name="business_type" required>
+                                <option value="">Select type...</option>
+                                <option value="Sole Proprietorship">Sole Proprietorship</option>
+                                <option value="LLC">LLC</option>
+                                <option value="Corporation">Corporation</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Franchise">Franchise</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select category...</option>
+                                <option value="automotive">Automotive (Repair, Parts, Tools)</option>
+                                <option value="dental">Dental (General, Cosmetic, Orthodontics)</option>
+                                <option value="hvac">HVAC (Heating & Cooling)</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="landscaping">Landscaping</option>
+                                <option value="contractor">General Contractor</option>
+                                <option value="professional">Professional Services</option>
+                                <option value="retail">Retail</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="services">Services Offered</label>
+                            <textarea id="services" name="services" rows="3" placeholder="e.g., Auto repair, brake service, oil changes, diagnostics"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="years_in_business">Years in Business</label>
+                            <input type="number" id="years_in_business" name="years_in_business" min="0" max="100" placeholder="e.g., 8">
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2>Contact Information</h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="owner_name">Owner/Contact Name *</label>
+                                <input type="text" id="owner_name" name="owner_name" required placeholder="e.g., Richard Regalado">
+                            </div>
+                            <div class="form-group">
+                                <label for="owner_title">Title</label>
+                                <input type="text" id="owner_title" name="owner_title" placeholder="e.g., Owner, Manager">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(209) 767-3328">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="contact@yourbusiness.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" name="website" placeholder="https://yourbusiness.com">
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2>Location</h2>
+
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address" placeholder="715 N Main St">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <select id="city" name="city" required>
+                                    <option value="">Select city...</option>
+                                    <option value="Manteca">Manteca</option>
+                                    <option value="Modesto">Modesto</option>
+                                    <option value="Stockton">Stockton</option>
+                                    <option value="Tracy">Tracy</option>
+                                    <option value="Turlock">Turlock</option>
+                                    <option value="Merced">Merced</option>
+                                    <option value="Lathrop">Lathrop</option>
+                                    <option value="Ripon">Ripon</option>
+                                    <option value="Other">Other (Central Valley)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" name="zip" placeholder="95336">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service_area">Service Area</label>
+                            <input type="text" id="service_area" name="service_area" placeholder="e.g., Manteca, Modesto, Stockton (comma-separated)">
+                            <p class="form-hint">If you serve multiple cities, list them here</p>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2>Online Presence</h2>
+
+                        <div class="form-group">
+                            <label for="google_business">Google Business Profile URL</label>
+                            <input type="url" id="google_business" name="google_business" placeholder="https://business.google.com/...">
+                            <p class="form-hint">Helps us verify your business</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="facebook">Facebook Page</label>
+                            <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/yourbusiness">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" id="instagram" name="instagram" placeholder="@yourbusiness">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="yelp">Yelp Page</label>
+                            <input type="url" id="yelp" name="yelp" placeholder="https://yelp.com/biz/...">
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2>Tell Us More</h2>
+
+                        <div class="form-group">
+                            <label for="description">Business Description</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Tell potential customers about your business, what makes you unique, your experience, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="what_makes_unique">What Makes Your Business Unique?</label>
+                            <textarea id="what_makes_unique" name="what_makes_unique" rows="3" placeholder="e.g., Family-owned for 30 years, 24/7 emergency service, owner-operated, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="how_did_you_hear">How did you hear about us?</label>
+                            <select id="how_did_you_hear" name="how_did_you_hear">
+                                <option value="">Select...</option>
+                                <option value="Referral">Referral from another business</option>
+                                <option value="Google">Google search</option>
+                                <option value="Social Media">Social media</option>
+                                <option value="Direct Contact">Direct contact from CC3PO</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2>Verification</h2>
+                        <p class="verification-note">To ensure quality, we verify every business before listing. We may call or visit to confirm your information.</p>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agree_terms" required>
+                                <span>I confirm this is a legitimate business operating in the Central Valley</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agree_contact" required>
+                                <span>I agree to be contacted for verification purposes</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agree_listing">
+                                <span>I'd like to receive updates about networking events and business opportunities (optional)</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Submit for Review
+                        </button>
+                        <p class="form-note">Submissions are typically reviewed within 24-48 hours</p>
+                    </div>
+                </form>
+
+                <div class="form-sidebar">
+                    <div class="sidebar-card">
+                        <h3>📝 What Happens Next?</h3>
+                        <ol>
+                            <li>We review your submission</li>
+                            <li>We verify your business (call/visit)</li>
+                            <li>Your listing goes live</li>
+                            <li>You get leads from local customers</li>
+                        </ol>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>⭐ Featured Listings</h3>
+                        <p>Want more visibility? Featured listings appear at the top of category pages and include:</p>
+                        <ul>
+                            <li>Premium placement</li>
+                            <li>Photos and videos</li>
+                            <li>Social media links</li>
+                            <li>Priority verification</li>
+                        </ul>
+                        <a href="#featured" class="btn btn-outline">Learn More</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>🤝 Business Networking</h3>
+                        <p>Join our network of Central Valley businesses. We connect businesses for cross-promotion and partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📍</span>
+                    <span class="logo-text">Central Valley Locals</span>
+                    <p>Supporting local businesses in Manteca, Modesto, Stockton, Tracy, and throughout the Central Valley.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <a href="categories/automotive.html">Automotive</a>
+                        <a href="categories/dental.html">Dental</a>
+                        <a href="categories/hvac.html">HVAC</a>
+                        <a href="categories/plumbing.html">Plumbing</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Cities</h4>
+                        <a href="#">Manteca</a>
+                        <a href="#">Modesto</a>
+                        <a href="#">Stockton</a>
+                        <a href="#">Tracy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <a href="submit.html">Add Your Business</a>
+                        <a href="index.html#about">About Us</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Central Valley Locals. All rights reserved.</p>
+                <p>A <a href="https://cc3po.com">CC3PO</a> project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/submit.js"></script>
+</body>
+</html>

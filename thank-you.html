@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for submitting your business to Central Valley Locals directory.">
+    <title>Thank You | Central Valley Locals</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">📍</span>
+                    <span class="logo-text">Central Valley Locals</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html#categories">Browse</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="thank-you-page">
+        <div class="container">
+            <div class="thank-you-content">
+                <div class="thank-you-icon">✅</div>
+                <h1>Thank You!</h1>
+                <p class="thank-you-subtitle">Your business submission has been received.</p>
+                
+                <div class="thank-you-steps">
+                    <h2>What Happens Next?</h2>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <h3>Review</h3>
+                            <p>We'll review your submission within 24 hours</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <h3>Verification</h3>
+                            <p>We may call or visit to verify your business</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <h3>Live</h3>
+                            <p>Your listing goes live on our directory</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <h3>Leads</h3>
+                            <p>Start getting calls from local customers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thank-you-cta">
+                    <a href="index.html" class="btn btn-primary btn-large">Return to Directory</a>
+                    <a href="submit.html" class="btn btn-outline">Add Another Business</a>
+                </div>
+
+                <div class="thank-you-contact">
+                    <p>Questions? Contact us:</p>
+                    <p>📧 info@centralvalleylocals.com</p>
+                    <p>📞 (209) 555-1234</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Central Valley Locals. All rights reserved.</p>
+                <p>A <a href="https://cc3po.com">CC3PO</a> project.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+.thank-you-page {
+    padding: var(--spacing-2xl) 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.thank-you-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.thank-you-icon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.thank-you-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.thank-you-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.thank-you-steps {
+    background: var(--surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.thank-you-steps h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.step h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.step p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.thank-you-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.thank-you-contact {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.thank-you-contact p {
+    margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .thank-you-cta {
+        flex-direction: column;
+    }
+}
+</style>
