@@ -56,6 +56,31 @@
         ]
     }
     </script>
+    
+    <!-- Event Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Coffee & Connections",
+        "organizer": {
+            "@type": "Organization",
+            "name": "Greater Lathrop Chamber of Commerce",
+            "url": "https://www.greaterlathrop.org"
+        },
+        "location": {
+            "@type": "Place",
+            "name": "Lathrop Police Department",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "940 River Islands Pkwy",
+                "addressLocality": "Lathrop",
+                "addressRegion": "CA",
+                "postalCode": "95330"
+            }
+        }
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -95,7 +120,7 @@
                         <span style="font-size: 1.5rem;">🏛️</span>
                         <div>
                             <div style="font-weight: 600; color: var(--text);">Greater Lathrop Chamber of Commerce</div>
-                            <div style="font-size: 0.875rem; color: var(--text-light);">Founding Member</div>
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Founding Member — Carlos Cabrales III</div>
                         </div>
                     </div>
                     <a href="https://www.greaterlathrop.org" target="_blank" class="btn btn-outline">Visit Chamber Website</a>
@@ -107,102 +132,269 @@
         <section style="padding: var(--space-2xl) 0;">
             <div class="container">
                 <div class="section-header">
-                    <h2>Upcoming Events</h2>
-                    <p>Network with local businesses at these chamber events</p>
+                    <h2>Upcoming Chamber Events</h2>
+                    <p>Network with local businesses at these Greater Lathrop Chamber events</p>
                 </div>
 
                 <div style="display: grid; gap: var(--space-lg);">
-                    <!-- Event Card -->
-                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg);">
-                        <div style="background: var(--primary); color: white; padding: var(--space-lg); text-align: center; min-width: 120px;">
-                            <div style="font-size: 2rem; font-weight: 800;">--</div>
-                            <div style="font-size: 0.875rem; text-transform: uppercase;">Monthly</div>
+                    
+                    <!-- April Mixer -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">30</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">APR</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Thu</div>
                         </div>
                         <div style="padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #667eea; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">MIXER</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">5:30 PM - 7:30 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">April Mixer</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Evening networking event at East Union Cemetery Association. Connect with local business owners and community leaders.</p>
+                            <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
+                                    <div style="font-weight: 600;">East Union Cemetery Association</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">1035 N Union Rd, Manteca, CA</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Host</div>
+                                    <div style="font-weight: 600;">Greater Lathrop Chamber</div>
+                                </div>
+                            </div>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Financial Resilience Webinar -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">12</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">MAY</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Tue</div>
+                        </div>
+                        <div style="padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #11998e; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">WEBINAR</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">6:00 PM - 7:00 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Financial Resilience for Business Owners</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">How to protect your income, business, and legacy when life doesn't go as planned. Educational webinar for business owners.</p>
+                            <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
+                                    <div style="font-weight: 600;">Online Webinar</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">Virtual Event</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Host</div>
+                                    <div style="font-weight: 600;">Greater Lathrop Chamber</div>
+                                </div>
+                            </div>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Shrimp Boil -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">16</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">MAY</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Sat</div>
+                        </div>
+                        <div style="padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #ff6b6b; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">FUNDRAISER</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">6:30 PM - 10:30 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Shrimp Boil Fundraiser</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Community fundraiser at Tracy Community Center. 50% of proceeds benefit River Islands High School students' uniform program.</p>
+                            <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
+                                    <div style="font-weight: 600;">Tracy Community Center</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">950 East St, Tracy, CA</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Benefit</div>
+                                    <div style="font-weight: 600;">River Islands HS Students</div>
+                                </div>
+                            </div>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Get Tickets</a>
+                        </div>
+                    </div>
+
+                    <!-- Coffee & Connections -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">19</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">MAY</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Tue</div>
+                        </div>
+                        <div style="padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: var(--primary); color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">MONTHLY</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">8:00 AM - 9:00 AM</span>
+                            </div>
                             <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Coffee & Connections</h3>
-                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Monthly networking event for local businesses. Third Tuesday of each month.</p>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Monthly networking morning at the Lathrop Police Department. Meet local business owners in a casual setting with coffee and conversation.</p>
                             <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
                                 <div>
                                     <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
-                                    <div style="font-weight: 600;">Olive Oil Pantry, Lathrop</div>
+                                    <div style="font-weight: 600;">Lathrop Police Department</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">940 River Islands Pkwy, Lathrop, CA</div>
                                 </div>
                                 <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Time</div>
-                                    <div style="font-weight: 600;">8:00 - 9:00 AM</div>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Host</div>
-                                    <div style="font-weight: 600;">Greater Lathrop Chamber</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Partner</div>
+                                    <div style="font-weight: 600;">Lathrop PD</div>
                                 </div>
                             </div>
-                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register</a>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register Now</a>
                         </div>
                     </div>
 
-                    <!-- Event Card -->
-                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg);">
-                        <div style="background: var(--accent); color: white; padding: var(--space-lg); text-align: center; min-width: 120px;">
-                            <div style="font-size: 2rem; font-weight: 800;">--</div>
-                            <div style="font-size: 0.875rem; text-transform: uppercase;">Quarterly</div>
+                    <!-- Cars, Crafts & Community -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">20</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">JUN</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Sat</div>
                         </div>
                         <div style="padding: var(--space-lg);">
-                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Chamber Mixer & Ribbon Cutting</h3>
-                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Evening networking event with ribbon cuttings for new member businesses. Quarterly events rotating through Central Valley locations.</p>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #4facfe; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">COMMUNITY</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">11:00 AM - 3:00 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Cars, Crafts & Community</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Community event at Lathrop High School featuring cars, crafts, and local vendors. 50% of proceeds benefit LHS Music & Fine Arts Department!</p>
                             <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
                                 <div>
                                     <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
-                                    <div style="font-weight: 600;">Rotating Venues</div>
+                                    <div style="font-weight: 600;">Lathrop High School</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">647 Spartan Way, Lathrop, CA</div>
                                 </div>
                                 <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Time</div>
-                                    <div style="font-weight: 600;">5:00 - 7:00 PM</div>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Host</div>
-                                    <div style="font-weight: 600;">Greater Lathrop Chamber</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Benefit</div>
+                                    <div style="font-weight: 600;">LHS Music & Fine Arts</div>
                                 </div>
                             </div>
-                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register</a>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
 
-                    <!-- Event Card -->
-                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg);">
-                        <div style="background: var(--verified); color: white; padding: var(--space-lg); text-align: center; min-width: 120px;">
-                            <div style="font-size: 2rem; font-weight: 800;">--</div>
-                            <div style="font-size: 0.875rem; text-transform: uppercase;">Monthly</div>
+                    <!-- Business Workshop -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">23</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">JUN</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Tue</div>
                         </div>
                         <div style="padding: var(--space-lg);">
-                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Power Hour Lunch</h3>
-                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Monthly lunch meeting with guest speakers on business topics. Great for networking and learning.</p>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #a18cd1; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">WORKSHOP</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">6:00 PM - 10:00 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Business Workshop: HR Essentials</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Comprehensive workshop covering HR Essentials, Employment Law Update, and Funding for Training (ETP) programs for businesses.</p>
                             <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
                                 <div>
                                     <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
-                                    <div style="font-weight: 600;">Rotating Restaurants</div>
+                                    <div style="font-weight: 600;">Staybridge Suites</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">1878 Daniels St, Manteca, CA</div>
                                 </div>
                                 <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Time</div>
-                                    <div style="font-weight: 600;">11:30 AM - 1:00 PM</div>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Cost</div>
-                                    <div style="font-weight: 600;">Lunch provided</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Topics</div>
+                                    <div style="font-weight: 600;">HR, Law, ETP Funding</div>
                                 </div>
                             </div>
-                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register</a>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Register Now</a>
                         </div>
                     </div>
+
+                    <!-- Best of Lathrop -->
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 0;">
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: var(--space-lg); text-align: center; min-width: 140px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">19</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">SEP</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9;">Sat</div>
+                        </div>
+                        <div style="padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <span style="background: #f5576c; color: white; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600;">AWARDS</span>
+                                <span style="color: var(--text-light); font-size: 0.875rem;">6:00 PM - 10:00 PM</span>
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Best of Lathrop: Business Awards Night</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--space-md);">Annual awards ceremony celebrating the best local businesses at the Great Wolf Lodge. Recognition for outstanding local businesses.</p>
+                            <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Location</div>
+                                    <div style="font-weight: 600;">Great Wolf Lodge</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-light);">2500 Daniels St, Manteca, CA</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase;">Type</div>
+                                    <div style="font-weight: 600;">Annual Gala</div>
+                                </div>
+                            </div>
+                            <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">Get Tickets</a>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div style="text-align: center; margin-top: var(--space-xl);">
-                    <p style="color: var(--text-light); margin-bottom: var(--space-md);">Want your event listed here?</p>
-                    <a href="submit.html" class="btn btn-outline">Submit an Event</a>
+                    <p style="color: var(--text-light); margin-bottom: var(--space-sm);">Want more events? Check the Chamber website for the full calendar.</p>
+                    <a href="https://www.greaterlathrop.org/events-1" target="_blank" class="btn btn-primary">View All Chamber Events</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event RSVP Section -->
+        <section style="padding: var(--space-2xl) 0; background: var(--surface-alt);">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <div class="section-header">
+                        <h2>RSVP for Events</h2>
+                        <p>Let us know which events you're interested in</p>
+                    </div>
+                    <div style="background: var(--surface); padding: var(--space-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm);">
+                        <form id="rsvp-form" action="https://formspree.io/f/xnnnnnnn" method="POST">
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="name" style="display: block; text-align: left; margin-bottom: var(--space-xs); font-weight: 600;">Your Name</label>
+                                <input type="text" id="name" name="name" required style="width: 100%; padding: var(--space-sm) var(--space-md); border: 1px solid var(--glass-border); border-radius: var(--radius-md); font-size: 1rem;">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="email" style="display: block; text-align: left; margin-bottom: var(--space-xs); font-weight: 600;">Email</label>
+                                <input type="email" id="email" name="email" required style="width: 100%; padding: var(--space-sm) var(--space-md); border: 1px solid var(--glass-border); border-radius: var(--radius-md); font-size: 1rem;">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="events" style="display: block; text-align: left; margin-bottom: var(--space-xs); font-weight: 600;">Events Interested In</label>
+                                <select id="events" name="events[]" multiple required style="width: 100%; padding: var(--space-sm) var(--space-md); border: 1px solid var(--glass-border); border-radius: var(--radius-md); font-size: 1rem; min-height: 100px;">
+                                    <option value="april-mixer">April Mixer (Apr 30)</option>
+                                    <option value="financial-webinar">Financial Resilience Webinar (May 12)</option>
+                                    <option value="shrimp-boil">Shrimp Boil Fundraiser (May 16)</option>
+                                    <option value="coffee-connections">Coffee & Connections (May 19)</option>
+                                    <option value="cars-crafts">Cars, Crafts & Community (Jun 20)</option>
+                                    <option value="business-workshop">Business Workshop (Jun 23)</option>
+                                    <option value="best-of-lathrop">Best of Lathrop Awards (Sep 19)</option>
+                                </select>
+                                <p style="font-size: 0.875rem; color: var(--text-light); margin-top: var(--space-xs);">Hold Ctrl/Cmd to select multiple</p>
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="message" style="display: block; text-align: left; margin-bottom: var(--space-xs); font-weight: 600;">Message (Optional)</label>
+                                <textarea id="message" name="message" rows="3" style="width: 100%; padding: var(--space-sm) var(--space-md); border: 1px solid var(--glass-border); border-radius: var(--radius-md); font-size: 1rem; resize: vertical;" placeholder="Any questions or notes?"></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Event RSVP from Central Valley Locals">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit RSVP</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Attend Events -->
-        <section style="padding: var(--space-2xl) 0; background: var(--surface-alt);">
+        <section style="padding: var(--space-2xl) 0;">
             <div class="container">
                 <div class="section-header">
                     <h2>Why Attend Chamber Events?</h2>
@@ -218,7 +410,7 @@
                     <div style="background: var(--surface); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
                         <span style="font-size: 2.5rem;">📚</span>
                         <h3 style="margin: var(--space-md) 0 var(--space-sm);">Learn & Grow</h3>
-                        <p style="color: var(--text-light); font-size: 0.875rem;">Guest speakers share insights on marketing, finance, operations, and more.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">Workshops on HR, finance, marketing, and more. Stay current on business trends.</p>
                     </div>
                     <div style="background: var(--surface); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
                         <span style="font-size: 2.5rem;">📢</span>
@@ -226,9 +418,69 @@
                         <p style="color: var(--text-light); font-size: 0.875rem;">Ribbon cuttings and introductions put your business in the spotlight.</p>
                     </div>
                     <div style="background: var(--surface); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
-                        <span style="font-size: 2.5rem;">💡</span>
-                        <h3 style="margin: var(--space-md) 0 var(--space-sm);">Share Ideas</h3>
-                        <p style="color: var(--text-light); font-size: 0.875rem;">Connect with peers facing similar challenges. Learn what works for others.</p>
+                        <span style="font-size: 2.5rem;">💼</span>
+                        <h3 style="margin: var(--space-md) 0 var(--space-sm);">Referral Network</h3>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">Chamber members refer business to each other. Your next client could be one connection away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member-to-Member Introductions -->
+        <section style="padding: var(--space-2xl) 0; background: var(--surface-alt);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center;">
+                    <div>
+                        <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">Member-to-Member Introductions</h2>
+                        <p style="color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                            As a Chamber member, we can connect you with other local business owners for cross-promotion, partnerships, and referrals. Let us know what kind of business connections you're looking for.
+                        </p>
+                        <ul style="list-style: none; margin-bottom: var(--space-xl);">
+                            <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
+                                <span style="color: var(--verified);">✓</span> Cross-promotion opportunities
+                            </li>
+                            <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
+                                <span style="color: var(--verified);">✓</span> Referral partnerships
+                            </li>
+                            <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
+                                <span style="color: var(--verified);">✓</span> Service provider connections
+                            </li>
+                            <li style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span style="color: var(--verified);">✓</span> B2B networking
+                            </li>
+                        </ul>
+                        <a href="https://www.greaterlathrop.org/membership" target="_blank" class="btn btn-primary">Become a Chamber Member</a>
+                    </div>
+                    <div style="background: var(--surface); padding: var(--space-xl); border-radius: var(--radius-xl); border: 2px solid var(--primary);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Request an Introduction</h3>
+                        <form id="intro-form" action="https://formspree.io/f/xnnnnnnn" method="POST">
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="intro-name" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Your Name</label>
+                                <input type="text" id="intro-name" name="name" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="intro-business" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Your Business</label>
+                                <input type="text" id="intro-business" name="business" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="intro-type" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">What type of business are you looking to connect with?</label>
+                                <select id="intro-type" name="connection_type" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                                    <option value="">Select type...</option>
+                                    <option value="referral">Referral Partnership</option>
+                                    <option value="cross-promo">Cross-Promotion</option>
+                                    <option value="service">Service Provider</option>
+                                    <option value="b2b">B2B Connection</option>
+                                    <option value="vendor">Vendor/Supplier</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="intro-notes" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Additional Notes</label>
+                                <textarea id="intro-notes" name="notes" rows="3" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);" placeholder="Tell us about the connection you're looking for..."></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Member Introduction Request - Central Valley Locals">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                        </form>
                     </div>
                 </div>
             </div>

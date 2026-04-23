@@ -90,20 +90,52 @@
         <!-- Founder Badge -->
         <section style="padding: var(--space-xl) 0; background: var(--surface);">
             <div class="container">
-                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: var(--radius-xl); padding: var(--space-2xl); color: white; text-align: center;">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                        <span style="font-size: 2.5rem;">🏛️</span>
-                        <div style="text-align: left;">
-                            <div style="font-size: 1.5rem; font-weight: 700;">Greater Lathrop Chamber of Commerce</div>
-                            <div style="opacity: 0.9;">Founding Member — Central Valley Locals</div>
+                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: var(--radius-xl); padding: var(--space-2xl); color: white;">
+                    <div style="display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-xl); align-items: center; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: var(--space-md);">
+                            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">🏛️</div>
+                            <div>
+                                <div style="font-size: 0.875rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em;">Official Chamber Member</div>
+                                <div style="font-size: 1.5rem; font-weight: 700;">Greater Lathrop Chamber of Commerce</div>
+                                <div style="opacity: 0.9;">Founding Member — Carlos Cabrales III</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; gap: var(--space-sm); justify-content: flex-end; flex-wrap: wrap;">
+                                <a href="https://www.greaterlathrop.org" target="_blank" class="btn-white">Visit Chamber Website</a>
+                                <a href="https://www.greaterlathrop.org/membership" target="_blank" class="btn-outline-white">Join the Chamber</a>
+                            </div>
                         </div>
                     </div>
-                    <p style="max-width: 600px; margin: 0 auto var(--space-lg); opacity: 0.95;">
-                        Carlos Cabrales, founder of Central Valley Locals, is a founding member of the Greater Lathrop Chamber of Commerce. We believe in building community through local business connections.
-                    </p>
-                    <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-                        <a href="https://www.greaterlathrop.org" target="_blank" class="btn-white">Visit Greater Lathrop Chamber</a>
-                        <a href="https://www.greaterlathrop.org/membership" target="_blank" class="btn-outline-white">Join the Chamber</a>
+                    
+                    <div style="margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid rgba(255,255,255,0.2);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: var(--space-md); opacity: 0.9;">As a Chamber Member, We Offer:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Member-to-Member Introductions</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Referral Tracking & Sharing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Event RSVP & Registration</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Business Directory Listing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Cross-Promotion Opportunities</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span>✓</span>
+                                <span>Monthly Networking Events</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,6 +239,77 @@
 
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Referral Tracking Section -->
+        <section style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Member Referral Tracking</h2>
+                    <p>Track your Chamber referrals and connections</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: start;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">How Referral Tracking Works</h3>
+                        <p style="color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                            When you refer a customer to another Chamber member business, we help track those connections so you get credit for supporting fellow members.
+                        </p>
+                        
+                        <div style="background: var(--surface-alt); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm);">
+                                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">1</div>
+                                <div style="font-weight: 600;">You refer a customer</div>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-left: 56px;">Send someone to a fellow Chamber member's business</p>
+                        </div>
+                        
+                        <div style="background: var(--surface-alt); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm);">
+                                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">2</div>
+                                <div style="font-weight: 600;">Submit the referral</div>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-left: 56px;">Fill out the referral form with details</p>
+                        </div>
+                        
+                        <div style="background: var(--surface-alt); border-radius: var(--radius-lg); padding: var(--space-lg);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm);">
+                                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">3</div>
+                                <div style="font-weight: 600;">Build your reputation</div>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-left: 56px;">Get recognized as a connector in the community</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: var(--surface); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-md); border: 2px solid var(--primary);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md); text-align: center;">Submit a Referral</h3>
+                        <form id="referral-form" action="https://formspree.io/f/xnnnnnnn" method="POST">
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="ref-name" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Your Name</label>
+                                <input type="text" id="ref-name" name="your_name" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="ref-your-business" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Your Business</label>
+                                <input type="text" id="ref-your-business" name="your_business" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="ref-to-business" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Referred To (Business Name)</label>
+                                <input type="text" id="ref-to-business" name="referred_to" required style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="ref-customer-name" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Customer/Client Name</label>
+                                <input type="text" id="ref-customer-name" name="customer_name" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="margin-bottom: var(--space-md);">
+                                <label for="ref-notes" style="display: block; margin-bottom: var(--space-xs); font-weight: 600;">Notes</label>
+                                <textarea id="ref-notes" name="notes" rows="2" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--glass-border); border-radius: var(--radius-md);" placeholder="Any additional details..."></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Chamber Referral Submitted - Central Valley Locals">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Referral</button>
+                        </form>
                     </div>
                 </div>
             </div>
