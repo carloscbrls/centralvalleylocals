@@ -1,7 +1,6 @@
 [build]
   publish = "."
 
-# Forms configuration
 [[redirects]]
   from = "/thank-you"
   to = "/thank-you.html"
@@ -13,17 +12,3 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-
-# Enable Netlify Forms
-[build.processing]
-  skip_processing = false
-[build.processing.html]
-  pretty_urls = true
-[build.processing.css]
-  bundle = true
-  minify = true
-[build.processing.js]
-  bundle = true
-  minify = true
-[build.processing.images]
-  compress = true
