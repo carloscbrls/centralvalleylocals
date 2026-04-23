@@ -1265,3 +1265,110 @@ input:focus-visible {
         --glass-border: rgba(78, 205, 196, 0.5);
     }
 }
+
+/* ============================================
+   TRUSTED PARTNERS SECTION (Business Pages)
+   ============================================ */
+.trusted-partners {
+    padding: var(--space-2xl) 0;
+    background: var(--surface-alt);
+    margin: var(--space-2xl) 0;
+    border-radius: var(--radius-2xl);
+}
+
+.trusted-partners h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-xl);
+}
+
+.partners-intro {
+    color: var(--text-light);
+    margin-bottom: var(--space-lg);
+    padding-left: var(--space-xl);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    padding: 0 var(--space-xl);
+}
+
+.partner-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.partner-card-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--transition-smooth);
+}
+
+.partner-link:hover .partner-card-mini {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.partner-card-mini .partner-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.partner-card-mini .partner-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--text);
+}
+
+.partner-card-mini .partner-info p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-xs);
+}
+
+.partner-referral {
+    display: inline-block;
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--primary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Add Partner Card */
+.partner-link.partner-add .partner-card-mini {
+    border-style: dashed;
+    background: transparent;
+}
+
+.partner-card-mini.add-partner {
+    justify-content: center;
+    text-align: center;
+}
+
+.partner-card-mini.add-partner .partner-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.partner-card-mini.add-partner .partner-info h4 {
+    color: var(--primary);
+}
+
+.partner-card-mini.add-partner .partner-info p {
+    font-size: 0.75rem;
+}
