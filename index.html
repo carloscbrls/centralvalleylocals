@@ -3,84 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Central Valley's trusted local business directory. Find HVAC, plumbing, dental, auto repair, and more in Manteca, Modesto, Stockton, and Tracy.">
-    <meta name="keywords" content="Central Valley businesses, Manteca directory, Modesto services, Stockton businesses, local contractors, Central Valley locals">
-    <title>Central Valley Locals | Trusted Local Business Directory</title>
+    <meta name="description" content="Central Valley's trusted local business directory. Find verified HVAC, plumbing, dental, automotive, and more in Manteca, Modesto, Stockton, Tracy. Free business listings.">
+    <meta name="keywords" content="Central Valley businesses, Manteca directory, Modesto services, Stockton businesses, local contractors, 209 directory">
+    <title>Central Valley Locals | Find Trusted Local Businesses in Manteca, Modesto, Stockton</title>
+    <link rel="canonical" href="https://centralvalleylocals.com">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Central Valley Locals",
+        "url": "https://centralvalleylocals.com",
+        "description": "Central Valley's trusted local business directory",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://centralvalleylocals.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">
-                    <span class="logo-icon">📍</span>
-                    <span class="logo-text">Central Valley Locals</span>
-                </a>
-                <nav class="nav">
-                    <a href="#categories">Browse</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <a href="submit.html" class="btn btn-primary">Add Your Business</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
+    <!-- Hero - Search Focused -->
     <section class="hero">
         <div class="container">
-            <h1>Find Trusted Local Businesses</h1>
-            <p class="hero-subtitle">Connect with Central Valley's best local businesses. Supporting our community, one business at a time.</p>
-            <div class="search-box">
-                <input type="text" placeholder="Search businesses, services, or categories..." id="search">
-                <button class="btn btn-primary">Search</button>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">22+</span>
-                    <span class="stat-label">Local Businesses</span>
+            <div class="hero-content">
+                <h1>Find Trusted Local Businesses</h1>
+                <p class="hero-subtitle">Connect with verified businesses in Manteca, Modesto, Stockton, and throughout Central Valley</p>
+                
+                <div class="search-container">
+                    <form class="search-box" action="search" method="get">
+                        <input type="text" class="search-input" name="q" placeholder="What service are you looking for?" aria-label="Search businesses">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Categories</span>
+                
+                <div class="search-suggestions">
+                    <a href="categories/automotive.html" class="suggestion-tag">🔧 Auto Repair</a>
+                    <a href="categories/dental.html" class="suggestion-tag">🦷 Dentist</a>
+                    <a href="categories/hvac.html" class="suggestion-tag">❄️ HVAC</a>
+                    <a href="categories/plumbing.html" class="suggestion-tag">🚿 Plumbing</a>
+                    <a href="categories/tools.html" class="suggestion-tag">🛠️ Tools</a>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Cities Served</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mission">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <p>Central Valley Locals connects neighbors with trusted local businesses. We believe in the power of community networking—when local businesses support each other, everyone thrives. Our directory isn't just a list; it's a network of Central Valley business owners helping each other grow.</p>
-            <div class="mission-values">
-                <div class="value">
-                    <span class="value-icon">🤝</span>
-                    <h3>Connect</h3>
-                    <p>Build relationships between local businesses and customers</p>
-                </div>
-                <div class="value">
-                    <span class="value-icon">⭐</span>
-                    <h3>Trust</h3>
-                    <p>Verified businesses with real reviews from real customers</p>
-                </div>
-                <div class="value">
-                    <span class="value-icon">💡</span>
-                    <h3>Support</h3>
-                    <p>Help local businesses grow through networking and visibility</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">22+</span>
+                        <span class="stat-label">Verified Businesses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Locally Owned</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="categories" id="categories">
+    <!-- Categories -->
+    <section class="categories-section" id="categories">
         <div class="container">
-            <h2>Browse by Category</h2>
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Find the right local professional for your needs</p>
+            </div>
+            
             <div class="category-grid">
                 <a href="categories/automotive.html" class="category-card">
                     <span class="category-icon">🔧</span>
@@ -116,129 +110,198 @@
         </div>
     </section>
 
-    <section class="cities">
+    <!-- City Filter -->
+    <section class="cities-section">
         <div class="container">
-            <h2>Cities We Serve</h2>
-            <div class="city-grid">
-                <div class="city-card">
-                    <h3>Manteca</h3>
-                    <p>15+ businesses</p>
-                </div>
-                <div class="city-card">
-                    <h3>Modesto</h3>
-                    <p>10+ businesses</p>
-                </div>
-                <div class="city-card">
-                    <h3>Stockton</h3>
-                    <p>8+ businesses</p>
-                </div>
-                <div class="city-card">
-                    <h3>Tracy</h3>
-                    <p>5+ businesses</p>
-                </div>
+            <div class="section-header">
+                <h2>Browse by City</h2>
+                <p>Find businesses near you</p>
+            </div>
+            <div class="city-tabs">
+                <a href="?city=all" class="city-tab active">All Cities</a>
+                <a href="?city=manteca" class="city-tab">Manteca</a>
+                <a href="?city=modesto" class="city-tab">Modesto</a>
+                <a href="?city=stockton" class="city-tab">Stockton</a>
+                <a href="?city=tracy" class="city-tab">Tracy</a>
+                <a href="?city=turlock" class="city-tab">Turlock</a>
             </div>
         </div>
     </section>
 
-    <section class="featured">
+    <!-- Featured Listings -->
+    <section class="listings-section">
         <div class="container">
-            <h2>Featured Businesses</h2>
-            <div class="business-grid">
-                <div class="business-card">
-                    <div class="business-header">
-                        <span class="featured-badge">Featured</span>
-                        <span class="rating">⭐ 4.9</span>
+            <div class="listings-header">
+                <div>
+                    <h2>Featured Businesses</h2>
+                    <p class="listings-count">Showing 2 of 22 verified businesses</p>
+                </div>
+                <a href="submit.html" class="btn btn-outline">Add Your Business</a>
+            </div>
+            
+            <div class="listings-grid">
+                <!-- Faith RLR LLC -->
+                <article class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-badges">
+                            <span class="badge badge-featured">Featured</span>
+                            <span class="badge badge-verified">✓ Verified</span>
+                        </div>
+                        <div class="business-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">4.9</span>
+                            <span class="review-count">(12)</span>
+                        </div>
                     </div>
-                    <h3>Faith RLR LLC</h3>
-                    <p class="business-category">Matco Tools Distributor</p>
-                    <p class="business-location">📍 Manteca, CA</p>
-                    <p class="business-description">Mobile tool distributor serving automotive technicians. Owner-operated with personalized service.</p>
-                    <div class="business-contact">
-                        <a href="tel:+12097673328" class="btn btn-outline">📞 (209) 767-3328</a>
-                        <a href="businesses/faith-rlr-llc.html" class="btn btn-primary">View Details</a>
+                    <div class="business-card-body">
+                        <h3><a href="businesses/faith-rlr-llc.html">Faith RLR LLC</a></h3>
+                        <p class="business-category">Matco Tools Distributor</p>
+                        <p class="business-location">📍 Manteca, CA (serves Central Valley)</p>
+                        <p class="business-description">Mobile tool distributor serving automotive technicians. Owner-operated with personalized service, after-hours support, and competitive pricing.</p>
+                        <div class="business-tags">
+                            <span class="business-tag">Tool Sales</span>
+                            <span class="business-tag">Mobile Service</span>
+                            <span class="business-tag">Financing</span>
+                        </div>
                     </div>
-                </div>
-                <div class="business-card">
-                    <div class="business-header">
-                        <span class="featured-badge">Client</span>
-                        <span class="rating">⭐ 4.8</span>
+                    <div class="business-card-footer">
+                        <a href="tel:+12097673328" class="btn-call">
+                            📞 (209) 767-3328
+                        </a>
+                        <a href="businesses/faith-rlr-llc.html" class="btn-details">
+                            View Details →
+                        </a>
                     </div>
-                    <h3>Dr. Alan S. Lee DDS</h3>
-                    <p class="business-category">Family & Cosmetic Dentistry</p>
-                    <p class="business-location">📍 Manteca, CA</p>
-                    <p class="business-description">30+ years serving Manteca with comprehensive dental care. Family-owned practice.</p>
-                    <div class="business-contact">
-                        <a href="tel:+12092392990" class="btn btn-outline">📞 (209) 239-2990</a>
-                        <a href="businesses/dr-alan-lee.html" class="btn btn-primary">View Details</a>
+                </article>
+
+                <!-- Dr. Alan S. Lee DDS -->
+                <article class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-badges">
+                            <span class="badge badge-featured">Client</span>
+                            <span class="badge badge-verified">✓ Verified</span>
+                        </div>
+                        <div class="business-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">4.8</span>
+                            <span class="review-count">(50+)</span>
+                        </div>
                     </div>
-                </div>
+                    <div class="business-card-body">
+                        <h3><a href="businesses/dr-alan-lee.html">Dr. Alan S. Lee DDS</a></h3>
+                        <p class="business-category">Family & Cosmetic Dentistry</p>
+                        <p class="business-location">📍 715 N Main St, Manteca, CA</p>
+                        <p class="business-description">30+ years serving Manteca. Comprehensive dental care including implants, whitening, crowns, and preventive care. New patients welcome.</p>
+                        <div class="business-tags">
+                            <span class="business-tag">Family Dentistry</span>
+                            <span class="business-tag">Implants</span>
+                            <span class="business-tag">Whitening</span>
+                        </div>
+                    </div>
+                    <div class="business-card-footer">
+                        <a href="tel:+12092392990" class="btn-call">
+                            📞 (209) 239-2990
+                        </a>
+                        <a href="businesses/dr-alan-lee.html" class="btn-details">
+                            View Details →
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-xl);">
+                <a href="categories/all.html" class="btn btn-primary btn-large">View All Businesses</a>
             </div>
         </div>
     </section>
 
-    <section class="networking">
+    <!-- Trust Section -->
+    <section class="trust-section">
         <div class="container">
-            <h2>Business Networking</h2>
-            <p class="networking-intro">When local businesses support each other, everyone wins. Central Valley Locals isn't just a directory—it's a network.</p>
-            <div class="networking-benefits">
-                <div class="benefit">
-                    <h3>🔄 Cross-Promotion</h3>
-                    <p>Local businesses refer customers to each other</p>
+            <div class="section-header">
+                <h2>Why Choose Central Valley Locals?</h2>
+                <p>We're building a network you can trust</p>
+            </div>
+            
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <h3>Verified Businesses</h3>
+                    <p>Every business is personally verified before listing. We call, visit, and confirm they're real.</p>
                 </div>
-                <div class="benefit">
-                    <h3>📊 Business Growth</h3>
-                    <p>Visibility that drives real customers</p>
+                <div class="trust-item">
+                    <span class="trust-icon">📍</span>
+                    <h3>Locally Owned</h3>
+                    <p>100% of our listings are locally owned businesses. No national chains, no franchises.</p>
                 </div>
-                <div class="benefit">
-                    <h3>🤝 Partnerships</h3>
-                    <p>Connect with complementary businesses</p>
+                <div class="trust-item">
+                    <span class="trust-icon">⭐</span>
+                    <h3>Real Reviews</h3>
+                    <p>We aggregate reviews from Google, Yelp, and Facebook so you see the full picture.</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🤝</span>
+                    <h3>Business Networking</h3>
+                    <p>We connect local businesses for cross-promotion and partnerships. Everyone grows together.</p>
                 </div>
             </div>
-            <a href="/submit" class="btn btn-primary btn-large">Join the Network</a>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <!-- About/Mission -->
+    <section class="about-section" style="padding: var(--space-3xl) 0; background: var(--surface-alt);">
         <div class="container">
-            <h2>About Central Valley Locals</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>We're a local business directory created by Central Valley residents, for Central Valley residents. Our mission is simple: connect neighbors with trusted local businesses.</p>
-                    <p>Unlike big corporate directories, we personally verify every business on our platform. We call them, visit them, and make sure they're legitimate before listing them.</p>
-                    <p><strong>Why does this matter?</strong> Because when you hire a local business from our directory, you're not just getting a service—you're supporting a neighbor.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">Our Mission</h2>
+                    <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                        Central Valley Locals connects neighbors with trusted local businesses. We believe in the power of community—when local businesses support each other, everyone thrives.
+                    </p>
+                    <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                        Unlike big corporate directories, we personally verify every business. We call them, visit them, and make sure they're legitimate before listing them.
+                    </p>
+                    <p style="font-size: 1.125rem; color: var(--text-light); line-height: 1.8;">
+                        <strong>When you hire a business from our directory, you're not just getting a service—you're supporting a neighbor.</strong>
+                    </p>
                 </div>
-                <div class="about-cta">
-                    <h3>Ready to grow your business?</h3>
-                    <p>Join Central Valley's fastest-growing local business network.</p>
-                    <a href="/submit" class="btn btn-primary">List Your Business</a>
+                <div style="background: var(--primary); border-radius: var(--radius-xl); padding: var(--space-2xl); color: white;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">Join the Network</h3>
+                    <p style="margin-bottom: var(--space-lg); opacity: 0.9;">
+                        Add your business for free. Get found by local customers. Connect with other businesses for cross-promotion.
+                    </p>
+                    <ul style="list-style: none; margin-bottom: var(--space-xl);">
+                        <li style="margin-bottom: var(--space-sm);">✓ Free listing</li>
+                        <li style="margin-bottom: var(--space-sm);">✓ Verified badge</li>
+                        <li style="margin-bottom: var(--space-sm);">✓ Business networking</li>
+                        <li>✓ Lead generation</li>
+                    </ul>
+                    <a href="submit.html" class="btn-white">Add Your Business</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>Questions? Want to list your business? Reach out:</p>
-            <div class="contact-methods">
-                <a href="mailto:info@centralvalleylocals.com" class="contact-method">
-                    <span class="contact-icon">📧</span>
-                    <span>info@centralvalleylocals.com</span>
-                </a>
-                <a href="tel:+12095551234" class="contact-method">
-                    <span class="contact-icon">📞</span>
-                    <span>(209) 555-1234</span>
-                </a>
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Join Central Valley's fastest-growing local business network. Free listings available now.</p>
+            <div class="cta-buttons">
+                <a href="submit.html" class="btn-white">Add Your Business</a>
+                <a href="#categories" class="btn-outline-white">Browse Businesses</a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <span class="logo-icon">📍</span>
-                    <span class="logo-text">Central Valley Locals</span>
+                    <a href="/" class="footer-logo">
+                        <span>📍</span>
+                        <span>Central Valley Locals</span>
+                    </a>
                     <p>Supporting local businesses in Manteca, Modesto, Stockton, Tracy, and throughout the Central Valley.</p>
                 </div>
                 <div class="footer-links">
@@ -248,18 +311,20 @@
                         <a href="categories/dental.html">Dental</a>
                         <a href="categories/hvac.html">HVAC</a>
                         <a href="categories/plumbing.html">Plumbing</a>
+                        <a href="categories/tools.html">Tools & Equipment</a>
                     </div>
                     <div class="footer-column">
                         <h4>Cities</h4>
-                        <a href="#">Manteca</a>
-                        <a href="#">Modesto</a>
-                        <a href="#">Stockton</a>
-                        <a href="#">Tracy</a>
+                        <a href="?city=manteca">Manteca</a>
+                        <a href="?city=modesto">Modesto</a>
+                        <a href="?city=stockton">Stockton</a>
+                        <a href="?city=tracy">Tracy</a>
+                        <a href="?city=turlock">Turlock</a>
                     </div>
                     <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <a href="/submit">Add Your Business</a>
-                        <a href="#about">About Us</a>
+                        <h4>For Businesses</h4>
+                        <a href="submit.html">Add Your Business</a>
+                        <a href="#about">Why List With Us</a>
                         <a href="#contact">Contact</a>
                     </div>
                 </div>
@@ -271,6 +336,14 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script>
+        // City tab filtering
+        document.querySelectorAll('.city-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
