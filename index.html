@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Central Valley's trusted local business directory. Find verified HVAC, plumbing, dental, automotive, and more in Manteca, Modesto, Stockton, Tracy. Free business listings.">
     <meta name="keywords" content="Central Valley businesses, Manteca directory, Modesto services, Stockton businesses, local contractors, 209 directory">
+    <meta name="author" content="Central Valley Locals">
+    <meta name="robots" content="index, follow">
     <title>Central Valley Locals | Find Trusted Local Businesses in Manteca, Modesto, Stockton</title>
     <link rel="canonical" href="https://centralvalleylocals.com">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Central Valley Locals | Find Trusted Local Businesses">
+    <meta property="og:description" content="Central Valley's trusted local business directory. Find verified businesses in Manteca, Modesto, Stockton, Tracy.">
+    <meta property="og:url" content="https://centralvalleylocals.com">
+    
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -25,31 +35,50 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Central Valley Locals",
+        "description": "Local business directory serving Manteca, Modesto, Stockton, Tracy, and Central Valley communities.",
+        "areaServed": ["Manteca, CA", "Modesto, CA", "Stockton, CA", "Tracy, CA", "Turlock, CA"],
+        "url": "https://centralvalleylocals.com"
+    }
+    </script>
 </head>
 <body>
-    <!-- Hero - Search Focused -->
-    <section class="hero">
+    <!-- Hero Section with Background Images -->
+    <section class="hero" role="banner">
         <div class="container">
             <div class="hero-content">
                 <h1>Find Trusted Local Businesses</h1>
                 <p class="hero-subtitle">Connect with verified businesses in Manteca, Modesto, Stockton, and throughout Central Valley</p>
                 
                 <div class="search-container">
-                    <form class="search-box" action="search" method="get">
-                        <input type="text" class="search-input" name="q" placeholder="What service are you looking for?" aria-label="Search businesses">
-                        <button type="submit" class="search-btn">Search</button>
+                    <form class="search-box" action="search" method="get" role="search">
+                        <label for="search-input" class="visually-hidden">Search businesses</label>
+                        <input 
+                            type="text" 
+                            id="search-input"
+                            class="search-input" 
+                            name="q" 
+                            placeholder="What service are you looking for?" 
+                            aria-label="Search businesses"
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn" aria-label="Search">Search</button>
                     </form>
                 </div>
                 
-                <div class="search-suggestions">
+                <nav class="search-suggestions" aria-label="Popular categories">
                     <a href="categories/automotive.html" class="suggestion-tag">🔧 Auto Repair</a>
                     <a href="categories/dental.html" class="suggestion-tag">🦷 Dentist</a>
                     <a href="categories/hvac.html" class="suggestion-tag">❄️ HVAC</a>
                     <a href="categories/plumbing.html" class="suggestion-tag">🚿 Plumbing</a>
                     <a href="categories/tools.html" class="suggestion-tag">🛠️ Tools</a>
-                </div>
+                </nav>
                 
-                <div class="hero-stats">
+                <div class="hero-stats" role="complementary">
                     <div class="stat">
                         <span class="stat-number">23+</span>
                         <span class="stat-label">Verified Businesses</span>
@@ -67,83 +96,83 @@
         </div>
     </section>
 
-    <!-- Categories -->
-    <section class="categories-section" id="categories">
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories" aria-labelledby="categories-heading">
         <div class="container">
-            <div class="section-header">
-                <h2>Browse by Category</h2>
+            <header class="section-header">
+                <h2 id="categories-heading">Browse by Category</h2>
                 <p>Find the right local professional for your needs</p>
-            </div>
+            </header>
             
-            <div class="category-grid">
+            <nav class="category-grid" aria-label="Business categories">
                 <a href="categories/automotive.html" class="category-card">
-                    <span class="category-icon">🔧</span>
+                    <span class="category-icon" aria-hidden="true">🔧</span>
                     <h3>Automotive</h3>
                     <p>Auto repair, tools, parts</p>
                     <span class="category-count">3 businesses</span>
                 </a>
                 <a href="categories/dental.html" class="category-card">
-                    <span class="category-icon">🦷</span>
+                    <span class="category-icon" aria-hidden="true">🦷</span>
                     <h3>Dental</h3>
                     <p>Dentists, orthodontists</p>
                     <span class="category-count">6 businesses</span>
                 </a>
                 <a href="categories/hvac.html" class="category-card">
-                    <span class="category-icon">❄️</span>
+                    <span class="category-icon" aria-hidden="true">❄️</span>
                     <h3>HVAC</h3>
                     <p>Heating & cooling</p>
                     <span class="category-count">5 businesses</span>
                 </a>
                 <a href="categories/plumbing.html" class="category-card">
-                    <span class="category-icon">🚿</span>
+                    <span class="category-icon" aria-hidden="true">🚿</span>
                     <h3>Plumbing</h3>
                     <p>Plumbing services</p>
                     <span class="category-count">4 businesses</span>
                 </a>
                 <a href="categories/professional.html" class="category-card">
-                    <span class="category-icon">💼</span>
+                    <span class="category-icon" aria-hidden="true">💼</span>
                     <h3>Professional</h3>
                     <p>Financial, legal, accounting</p>
                     <span class="category-count">1 business</span>
                 </a>
                 <a href="categories/tools.html" class="category-card">
-                    <span class="category-icon">🛠️</span>
+                    <span class="category-icon" aria-hidden="true">🛠️</span>
                     <h3>Tools & Equipment</h3>
                     <p>Mobile tool distributors</p>
                     <span class="category-count">1 business</span>
                 </a>
-            </div>
+            </nav>
         </div>
     </section>
 
-    <!-- City Filter -->
-    <section class="cities-section">
+    <!-- City Filter Section -->
+    <section class="cities-section" aria-labelledby="cities-heading">
         <div class="container">
-            <div class="section-header">
-                <h2>Browse by City</h2>
+            <header class="section-header">
+                <h2 id="cities-heading">Browse by City</h2>
                 <p>Find businesses near you</p>
-            </div>
-            <div class="city-tabs">
-                <a href="?city=all" class="city-tab active">All Cities</a>
+            </header>
+            <nav class="city-tabs" aria-label="City filter">
+                <a href="?city=all" class="city-tab active" aria-current="page">All Cities</a>
                 <a href="?city=manteca" class="city-tab">Manteca</a>
                 <a href="?city=modesto" class="city-tab">Modesto</a>
                 <a href="?city=stockton" class="city-tab">Stockton</a>
                 <a href="?city=tracy" class="city-tab">Tracy</a>
                 <a href="?city=turlock" class="city-tab">Turlock</a>
-            </div>
+            </nav>
         </div>
     </section>
 
-    <!-- Featured Listings -->
-    <section class="listings-section">
+    <!-- Featured Listings Section -->
+    <section class="listings-section" aria-labelledby="listings-heading">
         <div class="container">
-            <div class="listings-header">
+            <header class="listings-header">
                 <div>
-                    <h2>Featured Businesses</h2>
-                    <p class="listings-count">Showing 2 of 22 verified businesses</p>
+                    <h2 id="listings-heading">Featured Businesses</h2>
+                    <p class="listings-count">Showing 3 of 22 verified businesses</p>
                 </div>
                 <a href="submit.html" class="btn btn-outline">Add Your Business</a>
-            </div>
+            </header>
             
             <div class="listings-grid">
                 <!-- Faith RLR LLC -->
@@ -154,7 +183,7 @@
                             <span class="badge badge-verified">✓ Verified</span>
                         </div>
                         <div class="business-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="stars" aria-label="5 stars">⭐⭐⭐⭐⭐</span>
                             <span class="rating-number">4.9</span>
                             <span class="review-count">(12)</span>
                         </div>
@@ -188,7 +217,7 @@
                             <span class="badge badge-verified">✓ Verified</span>
                         </div>
                         <div class="business-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="stars" aria-label="5 stars">⭐⭐⭐⭐⭐</span>
                             <span class="rating-number">4.8</span>
                             <span class="review-count">(50+)</span>
                         </div>
@@ -213,6 +242,7 @@
                         </a>
                     </div>
                 </article>
+
                 <!-- Matt Safdari -->
                 <article class="business-card">
                     <div class="business-card-header">
@@ -220,7 +250,7 @@
                             <span class="badge badge-new">New Listing</span>
                         </div>
                         <div class="business-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="stars" aria-label="5 stars">⭐⭐⭐⭐⭐</span>
                             <span class="rating-number">5.0</span>
                             <span class="review-count">(Reviews)</span>
                         </div>
@@ -245,48 +275,51 @@
                         </a>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
 
     <!-- Trust Section -->
-    <section class="trust-section">
+    <section class="trust-section" aria-labelledby="trust-heading">
         <div class="container">
-            <div class="section-header">
-                <h2>Why Local Matters</h2>
+            <header class="section-header">
+                <h2 id="trust-heading">Why Local Matters</h2>
                 <p>Real businesses. Real families. Real community impact.</p>
-            </div>
+            </header>
             
             <div class="trust-grid">
                 <div class="trust-item">
-                    <span class="trust-icon">🏠</span>
+                    <span class="trust-icon" aria-hidden="true">🏠</span>
                     <h3>Locally Owned</h3>
                     <p>100% locally owned. No national chains. Your money stays in the community and supports local families.</p>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-icon">✓</span>
+                    <span class="trust-icon" aria-hidden="true">✓</span>
                     <h3>Personally Verified</h3>
                     <p>We call every business. We visit when we can. We make sure they're real before you call them.</p>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-icon">🤝</span>
+                    <span class="trust-icon" aria-hidden="true">🤝</span>
                     <h3>Business Networking</h3>
                     <p>We connect local businesses for cross-promotion and partnerships. Growing together.</p>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-icon">📱</span>
+                    <span class="trust-icon" aria-hidden="true">📱</span>
                     <h3>No Gatekeeping</h3>
                     <p>Free listings. No big budgets needed. Every business deserves to be found.</p>
                 </div>
             </div>
             
             <!-- Founder Story -->
-            <div style="margin-top: var(--space-3xl); background: var(--surface-alt); border-radius: var(--radius-xl); padding: var(--space-2xl); text-align: center;">
-                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--space-md); max-width: 700px; margin-left: auto; margin-right: auto;">
+            <div style="margin-top: var(--space-3xl); background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--radius-2xl); padding: var(--space-2xl); text-align: center;">
+                <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: var(--space-lg); max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.8;">
                     "I created this directory because I grew up here. I've seen families build businesses from nothing. I've seen what happens when the community supports its own. This is my way of giving back."
                 </p>
-                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-top: var(--space-lg);">
-                    <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">CC</div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl);">
+                    <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.25rem; box-shadow: var(--shadow-md);">CC</div>
                     <div style="text-align: left;">
-                        <p style="font-weight: 600; margin-bottom: 2px;">Carlos Cabrales III</p>
-                        <p style="color: var(--text-light); font-size: 0.875rem;">Founder, Central Valley Locals & Raíces Digitales</p>
+                        <p style="font-weight: 700; margin-bottom: 4px; font-size: 1.1rem;">Carlos Cabrales III</p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Founder, Central Valley Locals & Raíces Digitales</p>
                     </div>
                 </div>
             </div>
@@ -294,24 +327,24 @@
     </section>
 
     <!-- About/Mission -->
-    <section class="about-section" style="padding: var(--space-3xl) 0; background: var(--surface-alt);">
+    <section class="about-section" style="padding: var(--space-4xl) 0;" aria-labelledby="about-heading">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
-                <div>
-                    <h2 style="font-size: 2rem; margin-bottom: var(--space-lg);">More Than a Directory</h2>
-                    <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
-                        <strong>Central Valley Locals was created by a Central Valley local.</strong> Founded by Carlos Cabrales—IT consultant, mentor, and founder of Raíces Digitales—this directory exists to lift up the businesses that power our communities.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center;">
+                <div class="about-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: var(--space-lg);">More Than a Directory</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                        <strong style="color: var(--text);">Central Valley Locals was created by a Central Valley local.</strong> Founded by Carlos Cabrales—IT consultant, mentor, and founder of Raíces Digitales—this directory exists to lift up the businesses that power our communities.
                     </p>
-                    <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
-                        <strong>Our mission:</strong> Give every locally-owned business a chance to be found. No big corporate budgets required. No franchise chains. Just real people serving real people.
+                    <p style="font-size: 1.15rem; color: var(--text-light); margin-bottom: var(--space-lg); line-height: 1.8;">
+                        <strong style="color: var(--text);">Our mission:</strong> Give every locally-owned business a chance to be found. No big corporate budgets required. No franchise chains. Just real people serving real people.
                     </p>
-                    <p style="font-size: 1.125rem; color: var(--text-light); line-height: 1.8;">
+                    <p style="font-size: 1.15rem; color: var(--text-light); line-height: 1.8;">
                         We believe when local businesses succeed, families thrive, communities grow, and the next generation has role models to follow.
                     </p>
                 </div>
-                <div style="background: var(--primary); border-radius: var(--radius-xl); padding: var(--space-2xl); color: white;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: var(--space-md);">Join the Network</h3>
-                    <p style="margin-bottom: var(--space-lg); opacity: 0.9;">
+                <div class="about-cta">
+                    <h3 style="font-size: 1.75rem; margin-bottom: var(--space-md);">Join the Network</h3>
+                    <p style="margin-bottom: var(--space-lg); opacity: 0.95;">
                         Add your business for free. Get found by local customers. Connect with other businesses for cross-promotion and growth.
                     </p>
                     <ul style="list-style: none; margin-bottom: var(--space-xl);">
@@ -328,9 +361,9 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" aria-labelledby="cta-heading">
         <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
+            <h2 id="cta-heading">Ready to Grow Your Business?</h2>
             <p>Join Central Valley's fastest-growing local business network. Free listings available now.</p>
             <div class="cta-buttons">
                 <a href="submit.html" class="btn-white">Add Your Business</a>
@@ -340,20 +373,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="/" class="footer-logo">
-                        <span>📍</span>
+                        <span aria-hidden="true">📍</span>
                         <span>Central Valley Locals</span>
                     </a>
                     <p>Supporting local businesses in Manteca, Modesto, Stockton, Tracy, and throughout the Central Valley.</p>
                     <p style="margin-top: var(--space-md); font-size: 0.875rem;">
-                        🏛️ <strong>Founding Member:</strong> <a href="https://www.greaterlathrop.org" target="_blank" style="color: inherit;">Greater Lathrop Chamber of Commerce</a>
+                        🏛️ <strong>Founding Member:</strong> <a href="https://www.greaterlathrop.org" target="_blank" rel="noopener" style="color: inherit;">Greater Lathrop Chamber of Commerce</a>
                     </p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer navigation">
                     <div class="footer-column">
                         <h4>Categories</h4>
                         <a href="categories/automotive.html">Automotive</a>
@@ -376,7 +409,7 @@
                         <a href="chambers.html">Chambers</a>
                         <a href="submit.html">Add Your Business</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Central Valley Locals. All rights reserved.</p>
@@ -391,6 +424,20 @@
             tab.addEventListener('click', function(e) {
                 document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
