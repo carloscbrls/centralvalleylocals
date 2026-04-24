@@ -3,116 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Central Valley's trusted local business directory. Find verified HVAC, plumbing, dental, automotive, and more in Manteca, Modesto, Stockton, Tracy. Free business listings.">
-    <title>Central Valley Locals | Find Trusted Local Businesses</title>
-    <link rel="canonical" href="https://centralvalleylocals.com">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Central Valley Locals | Premium Business Directory</title>
+    <meta name="description" content="Central Valley's elite business directory. Verified local businesses, instant quotes, trusted reviews. Join 100+ local businesses today.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* Enhanced Business Card */
-        .business-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
-        .business-card:hover {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            transform: translateY(-4px);
+        /* ===== PREMIUM DESIGN SYSTEM ===== */
+        :root {
+            --primary: #0F172A;
+            --primary-light: #1E293B;
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+            --accent-dark: #2563EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --purple: #8B5CF6;
+            --pink: #EC4899;
+            --gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+            --gradient-dark: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            --glass: rgba(255,255,255,0.05);
+            --glass-border: rgba(255,255,255,0.1);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 40px rgba(59,130,246,0.3);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
         }
         
-        /* Trust Badges */
-        .badge-container {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .badge {
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: var(--gradient-dark);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .header {
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-icon {
+            font-size: 32px;
+        }
+        
+        .logo-text {
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        .logo-text span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .badge-verified {
-            background: #10B981;
-            color: white;
-        }
-        .badge-chamber {
-            background: #3B82F6;
-            color: white;
-        }
-        .badge-featured {
-            background: #F59E0B;
-            color: white;
-        }
-        .badge-licensed {
-            background: #8B5CF6;
-            color: white;
-        }
-        
-        /* Star Rating */
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-bottom: 8px;
-        }
-        .stars {
-            color: #F59E0B;
-            font-size: 16px;
-        }
-        .review-count {
-            color: #6B7280;
-            font-size: 14px;
-            margin-left: 4px;
-        }
-        
-        /* Business Info */
-        .business-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 8px;
-        }
-        .business-name a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .business-name a:hover {
-            color: #3B82F6;
-        }
-        
-        .business-meta {
-            display: flex;
-            gap: 16px;
-            color: #6B7280;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-        
-        .business-description {
-            color: #374151;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 16px;
-        }
-        
-        /* CTA Buttons */
-        .business-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
             font-weight: 600;
             font-size: 14px;
             text-decoration: none;
@@ -120,575 +157,826 @@
             border: none;
             cursor: pointer;
         }
+        
         .btn-primary {
-            background: #3B82F6;
+            background: var(--gradient);
             color: white;
-        }
-        .btn-primary:hover {
-            background: #2563EB;
-        }
-        .btn-secondary {
-            background: #F3F4F6;
-            color: #374151;
-        }
-        .btn-secondary:hover {
-            background: #E5E7EB;
-        }
-        .btn-quote {
-            background: #10B981;
-            color: white;
-            flex: 1;
-        }
-        .btn-quote:hover {
-            background: #059669;
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
         }
         
-        /* Lead Score */
-        .lead-score {
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), 0 0 60px rgba(59,130,246,0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--glass);
+            color: white;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 16px;
+        }
+        
+        /* Hero Content */
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+        
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        
+        /* Search Box */
+        .search-container {
+            max-width: 700px;
+        }
+        
+        .search-box {
+            display: flex;
+            background: var(--primary-light);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 16px 20px;
+            font-size: 16px;
+            color: white;
+            outline: none;
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        
+        .search-btn {
+            padding: 16px 32px;
+            border-radius: var(--radius-lg);
+        }
+        
+        /* Category Tags */
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .category-tag:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .category-tag .icon {
+            font-size: 18px;
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 32px;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--glass-border);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+        
+        /* ===== TRUST SECTION ===== */
+        .trust-section {
+            padding: 80px 0;
+            background: var(--primary-light);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .trust-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        
+        .trust-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .trust-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .trust-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .trust-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
+        }
+        
+        /* ===== FEATURED BUSINESSES ===== */
+        .businesses-section {
+            padding: 80px 0;
+        }
+        
+        .businesses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        
+        .business-card {
+            background: var(--primary-light);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+        
+        .business-card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
             font-weight: 600;
         }
-        .lead-score-high {
-            background: #D1FAE5;
-            color: #059669;
-        }
-        .lead-score-medium {
-            background: #FEF3C7;
-            color: #D97706;
-        }
-        .lead-score-low {
-            background: #FEE2E2;
-            color: #DC2626;
+        
+        .badge-verified {
+            background: rgba(16,185,129,0.15);
+            color: #10B981;
         }
         
-        /* Quote Modal */
-        .modal {
-            display: none;
-            position: fixed;
+        .badge-chamber {
+            background: rgba(59,130,246,0.15);
+            color: #60A5FA;
+        }
+        
+        .badge-featured {
+            background: rgba(245,158,11,0.15);
+            color: #FBBF24;
+        }
+        
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .stars {
+            color: #FBBF24;
+            font-size: 14px;
+        }
+        
+        .review-count {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .card-title a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .card-title a:hover {
+            color: var(--accent-light);
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .card-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn-card {
+            flex: 1;
+            justify-content: center;
+            padding: 12px 20px;
+        }
+        
+        .btn-quote {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-quote:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
         }
-        .modal.active {
-            display: flex;
+        
+        .cta-content {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        .modal-content {
-            background: white;
-            padding: 32px;
-            border-radius: 16px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 6vw, 56px);
             margin-bottom: 24px;
         }
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6B7280;
+        
+        .cta-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 40px;
         }
-        .form-group {
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-cta {
+            background: white;
+            color: var(--primary);
+            padding: 18px 40px;
+            font-size: 16px;
+        }
+        
+        .btn-cta:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 16px 38px;
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--primary);
+            border-top: 1px solid var(--glass-border);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 700;
             margin-bottom: 16px;
         }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #374151;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid #D1D5DB;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #3B82F6;
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        
+        .footer-brand span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        .footer-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
             color: white;
-            padding: 48px 0;
-            margin: 48px 0;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-        }
-        .stat-label {
-            font-size: 16px;
-            opacity: 0.9;
         }
         
-        /* Trust Section */
-        .trust-section {
-            background: #F9FAFB;
-            padding: 48px 0;
-        }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-        .trust-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        .trust-icon {
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-        .trust-content h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .trust-content p {
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.5);
             font-size: 14px;
-            color: #6B7280;
         }
+        
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .search-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .businesses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-content > * {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .hero-content > *:nth-child(2) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <a href="/" class="logo">
-                <span class="logo-icon">📍</span>
-                <span class="logo-text">Central Valley Locals</span>
-            </a>
-            <nav class="nav">
-                <a href="/businesses" class="nav-link">Businesses</a>
-                <a href="/categories" class="nav-link">Categories</a>
-                <a href="/events" class="nav-link">Events</a>
-                <a href="/submit" class="btn btn-primary">Add Your Business</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Find Trusted Local Businesses</h1>
-            <p class="hero-subtitle">Connect with verified businesses in Manteca, Modesto, Stockton, Tracy, and throughout Central Valley</p>
-            
-            <div class="search-container">
-                <form class="search-box" id="search-form">
-                    <input type="text" id="search-input" class="search-input" placeholder="What service are you looking for?" autocomplete="off">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </form>
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">📍</span>
+                        <span class="logo-text">Central Valley <span>Locals</span></span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="/businesses">Browse</a>
+                        <a href="/categories">Categories</a>
+                        <a href="/events">Events</a>
+                        <a href="/submit" class="btn btn-primary">List Your Business</a>
+                    </div>
+                </nav>
             </div>
-            
-            <nav class="search-suggestions">
-                <a href="/categories/automotive" class="suggestion-tag">🔧 Automotive</a>
-                <a href="/categories/health-wellness" class="suggestion-tag">🦷 Health</a>
-                <a href="/categories/home-services" class="suggestion-tag">🏠 Home Services</a>
-                <a href="/categories/professional-services" class="suggestion-tag">💼 Professional</a>
-                <a href="/categories/technology" class="suggestion-tag">💻 Technology</a>
-            </nav>
+        </header>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Trusted by 100+ Local Businesses
+                </div>
+                
+                <h1>Find the <span class="highlight">Best Local</span> Businesses in Central Valley</h1>
+                
+                <p class="hero-subtitle">
+                    Connect with verified, reviewed businesses in Manteca, Modesto, Stockton, Tracy, and Lathrop. Get instant quotes, read real reviews, and support local.
+                </p>
+                
+                <div class="search-container">
+                    <form class="search-box" id="search-form">
+                        <input type="text" class="search-input" id="search-input" placeholder="What service are you looking for?" autocomplete="off">
+                        <button type="submit" class="btn btn-primary search-btn">Search</button>
+                    </form>
+                </div>
+                
+                <div class="category-tags">
+                    <a href="/categories/automotive" class="category-tag"><span class="icon">🔧</span> Automotive</a>
+                    <a href="/categories/health-wellness" class="category-tag"><span class="icon">🦷</span> Health & Dental</a>
+                    <a href="/categories/home-services" class="category-tag"><span class="icon">🏠</span> Home Services</a>
+                    <a href="/categories/professional-services" class="category-tag"><span class="icon">💼</span> Professional</a>
+                    <a href="/categories/technology" class="category-tag"><span class="icon">💻</span> Technology</a>
+                </div>
+                
+                <div class="stats-bar">
+                    <div class="stat">
+                        <div class="stat-value" id="stat-businesses">13+</div>
+                        <div class="stat-label">Verified Businesses</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Central Valley Cities</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">10</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Quote Requests</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Stats -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="stat-businesses">13+</div>
-                    <div class="stat-label">Verified Businesses</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Central Valley Cities</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">Business Categories</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Quote Requests</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Businesses -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Businesses</h2>
-            <div class="business-grid" id="featured-businesses">
-                <div class="loading">Loading featured businesses...</div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Trust Section -->
     <section class="trust-section">
         <div class="container">
-            <h2 class="section-title">Why Central Valley Locals?</h2>
+            <div class="section-header">
+                <div class="section-label">✨ Why Choose Us</div>
+                <h2 class="section-title">Built for Trust, Designed for Growth</h2>
+                <p class="section-subtitle">We're not just another directory. We're your partner in local business growth.</p>
+            </div>
+            
             <div class="trust-grid">
-                <div class="trust-item">
-                    <span class="trust-icon">✓</span>
-                    <div class="trust-content">
-                        <h3>Verified Businesses</h3>
-                        <p>All businesses verified for legitimacy and quality</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">✓</div>
+                    <h3 class="trust-title">Verified Businesses</h3>
+                    <p class="trust-desc">Every business is verified for legitimacy. No scams, no fake listings. Just real local businesses.</p>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🏛️</span>
-                    <div class="trust-content">
-                        <h3>Chamber Connected</h3>
-                        <p>Partnered with Greater Lathrop Chamber of Commerce</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">🏛️</div>
+                    <h3 class="trust-title">Chamber Connected</h3>
+                    <p class="trust-desc">Official partner of the Greater Lathrop Chamber of Commerce. Trust backed by community.</p>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">⭐</span>
-                    <div class="trust-content">
-                        <h3>Real Reviews</h3>
-                        <p>Authentic reviews from verified customers</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">⭐</div>
+                    <h3 class="trust-title">Real Reviews</h3>
+                    <p class="trust-desc">Authentic reviews from verified customers. No fake reviews, no manipulation.</p>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">💬</span>
-                    <div class="trust-content">
-                        <h3>Instant Quotes</h3>
-                        <p>Get quotes from multiple businesses instantly</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">💬</div>
+                    <h3 class="trust-title">Instant Quotes</h3>
+                    <p class="trust-desc">Get quotes from multiple businesses instantly. Compare prices and services in minutes.</p>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">📱</span>
-                    <div class="trust-content">
-                        <h3>SMS Notifications</h3>
-                        <p>Businesses notified instantly of your request</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">📱</div>
+                    <h3 class="trust-title">SMS Notifications</h3>
+                    <p class="trust-desc">Businesses are notified instantly. No waiting for callbacks. Get responses fast.</p>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🆓</span>
-                    <div class="trust-content">
-                        <h3>Free for Consumers</h3>
-                        <p>Always free to search and request quotes</p>
-                    </div>
+                <div class="trust-card">
+                    <div class="trust-icon">🆓</div>
+                    <h3 class="trust-title">Free for Consumers</h3>
+                    <p class="trust-desc">Always free to search, compare, and request quotes. No hidden fees, no catches.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Categories -->
-    <section class="section section-gray">
+    
+    <!-- Featured Businesses -->
+    <section class="businesses-section">
         <div class="container">
-            <h2 class="section-title">Browse by Category</h2>
-            <div class="category-grid" id="categories-grid">
-                <div class="loading">Loading categories...</div>
+            <div class="section-header">
+                <div class="section-label">🏢 Featured Businesses</div>
+                <h2 class="section-title">Top-Rated Local Businesses</h2>
+                <p class="section-subtitle">Handpicked businesses with excellent reviews and verified credentials.</p>
+            </div>
+            
+            <div class="businesses-grid" id="featured-businesses">
+                <div class="loading" style="text-align: center; padding: 40px; color: rgba(255,255,255,0.5);">
+                    Loading featured businesses...
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA -->
-    <section class="section cta-section">
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2>List Your Business Free</h2>
-            <p>Join Central Valley's fastest growing business directory</p>
-            <a href="/submit" class="btn btn-primary btn-large">Add Your Business</a>
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Grow Your Business?</h2>
+                <p class="cta-subtitle">Join 100+ local businesses already listed. Free basic listings, premium features available.</p>
+                <div class="cta-buttons">
+                    <a href="/submit" class="btn btn-cta btn-lg">List Your Business Free</a>
+                    <a href="/premium" class="btn btn-ghost btn-lg">Learn About Premium</a>
+                </div>
+            </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Central Valley Locals</h4>
-                    <p>Your trusted local business directory serving Manteca, Modesto, Stockton, Tracy, and Lathrop.</p>
-                    <p>🏛️ Chamber Member: Greater Lathrop Chamber of Commerce</p>
+                <div class="footer-col">
+                    <div class="footer-brand">Central Valley <span>Locals</span></div>
+                    <p class="footer-desc">Your trusted local business directory serving Manteca, Modesto, Stockton, Tracy, and Lathrop. Verified businesses, real reviews, instant quotes.</p>
+                    <p class="footer-desc" style="margin-top: 12px;">🏛️ Chamber Member: Greater Lathrop Chamber of Commerce</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
+                <div class="footer-col">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
                         <li><a href="/businesses">All Businesses</a></li>
                         <li><a href="/categories">Categories</a></li>
                         <li><a href="/events">Events</a></li>
-                        <li><a href="/submit">Add Business</a></li>
+                        <li><a href="/search">Search</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>For Businesses</h4>
-                    <ul>
-                        <li><a href="/submit">Free Listing</a></li>
-                        <li><a href="/claim">Claim Your Business</a></li>
+                <div class="footer-col">
+                    <h4 class="footer-title">For Businesses</h4>
+                    <ul class="footer-links">
+                        <li><a href="/submit">Add Your Business</a></li>
+                        <li><a href="/claim">Claim Your Listing</a></li>
                         <li><a href="/premium">Premium Features</a></li>
                         <li><a href="/advertise">Advertise</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>📧 info@centralvalleylocals.com</p>
-                    <p>📞 (209) 423-6633</p>
-                    <p>🌐 <a href="https://cc3po.com">Powered by CC3PO</a></p>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>📧 info@centralvalleylocals.com</li>
+                        <li>📞 (209) 423-6633</li>
+                        <li><a href="https://cc3po.com">🌐 Powered by CC3PO</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Central Valley Locals. All rights reserved.</p>
+                <p>&copy; 2026 Central Valley Locals. All rights reserved. Made with ❤️ in Central Valley.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Quote Request Modal -->
-    <div class="modal" id="quote-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Request a Quote</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <form id="quote-form">
-                <input type="hidden" id="business_id" name="business_id">
-                <input type="hidden" id="business_name" name="business_name">
-                
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" id="customer_name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Phone *</label>
-                    <input type="tel" id="customer_phone" name="phone" required placeholder="(209) 555-0123">
-                </div>
-                
-                <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" id="customer_email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Service Needed *</label>
-                    <select id="service_type" name="service" required>
-                        <option value="">Select service...</option>
-                        <option value="consultation">Consultation</option>
-                        <option value="quote">Price Quote</option>
-                        <option value="repair">Repair Service</option>
-                        <option value="installation">Installation</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Preferred Contact Time</label>
-                    <select id="contact_time" name="contact_time">
-                        <option value="anytime">Anytime</option>
-                        <option value="morning">Morning (8 AM - 12 PM)</option>
-                        <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
-                        <option value="evening">Evening (5 PM - 8 PM)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Additional Details</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Tell us more about what you need..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-quote" style="width: 100%;">
-                    Send Quote Request
-                </button>
-                
-                <p style="text-align: center; margin-top: 12px; font-size: 12px; color: #6B7280;">
-                    🔒 Your information is secure and will only be shared with the business.
-                </p>
-            </form>
-        </div>
-    </div>
-
+    
     <!-- Supabase Client -->
     <script type="module">
-        import { supabase, getBusinesses, getCategories, getCategoryIcon } from './assets/js/supabase-client.js';
-
-        // State
-        let businesses = [];
-
-        // Initialize
+        import { supabase, getBusinesses } from './assets/js/supabase-client.js';
+        
         async function init() {
-            console.log('Initializing Central Valley Locals...');
-            
-            // Load featured businesses
-            businesses = await getBusinesses({ limit: 12 });
+            const businesses = await getBusinesses({ limit: 6 });
             const container = document.getElementById('featured-businesses');
             
             if (businesses && businesses.length > 0) {
-                container.innerHTML = businesses.map(b => renderBusinessCard(b)).join('');
-                console.log(`Loaded ${businesses.length} businesses`);
+                container.innerHTML = businesses.map(b => {
+                    const category = b.categories || { name: 'Local Business', slug: 'local' };
+                    const badges = [];
+                    if (b.is_featured) badges.push('<span class="badge badge-featured">⭐ Featured</span>');
+                    if (b.chamber_member) badges.push('<span class="badge badge-chamber">🏛️ Chamber</span>');
+                    
+                    return `
+                        <article class="business-card">
+                            <div class="card-badges">${badges.join('')}</div>
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="review-count">(${b.review_count || 0} reviews)</span>
+                            </div>
+                            <h3 class="card-title"><a href="/business/${b.slug}">${b.name}</a></h3>
+                            <div class="card-meta">
+                                ${b.city ? `<span>📍 ${b.city}</span>` : ''}
+                                ${b.phone ? `<span>📞 ${b.phone}</span>` : ''}
+                            </div>
+                            <p class="card-desc">${b.description || 'Local business serving Central Valley'}</p>
+                            <div class="card-actions">
+                                <button class="btn btn-quote btn-card" onclick="window.open('/quote?business=${b.id}', '_self')">
+                                    Request Quote
+                                </button>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
             } else {
-                container.innerHTML = '<p class="no-results">No businesses yet. <a href="/submit">Add your business</a> to be featured!</p>';
-            }
-
-            // Load categories
-            const categories = await getCategories();
-            const catContainer = document.getElementById('categories-grid');
-            
-            if (categories && categories.length > 0) {
-                catContainer.innerHTML = categories.map(cat => `
-                    <a href="/categories/${cat.slug}" class="category-card">
-                        <span class="category-icon">${getCategoryIcon(cat.slug)}</span>
-                        <span class="category-name">${cat.name}</span>
-                    </a>
-                `).join('');
-            }
-
-            // Update stats
-            document.getElementById('stat-businesses').textContent = businesses.length + '+';
-
-            // Search functionality
-            document.getElementById('search-form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const query = document.getElementById('search-input').value.trim();
-                if (query) {
-                    window.location.href = `/businesses?q=${encodeURIComponent(query)}`;
-                }
-            });
-
-            // Quote form submission
-            document.getElementById('quote-form').addEventListener('submit', handleQuoteSubmit);
-        }
-
-        // Render business card with enhanced design
-        function renderBusinessCard(business) {
-            const category = business.categories || { name: 'Uncategorized', slug: 'uncategorized' };
-            const badges = [];
-            
-            // Add badges based on business data
-            if (business.is_featured) badges.push('<span class="badge badge-featured">⭐ Featured</span>');
-            if (business.chamber_member) badges.push('<span class="badge badge-chamber">🏛️ Chamber Member</span>');
-            if (business.verified) badges.push('<span class="badge badge-verified">✓ Verified</span>');
-            if (business.licensed) badges.push('<span class="badge badge-licensed">📋 Licensed</span>');
-            
-            return `
-                <article class="business-card" data-business-id="${business.id}">
-                    ${badges.length > 0 ? `<div class="badge-container">${badges.join('')}</div>` : ''}
-                    
-                    <div class="rating">
-                        <span class="stars">${'★'.repeat(business.rating || 5)}${'☆'.repeat(5 - (business.rating || 5))}</span>
-                        <span class="review-count">(${business.review_count || 0} reviews)</span>
-                    </div>
-                    
-                    <h3 class="business-name">
-                        <a href="/business/${business.slug}">${business.name}</a>
-                    </h3>
-                    
-                    <div class="business-meta">
-                        ${business.city ? `<span>📍 ${business.city}</span>` : ''}
-                        ${business.phone ? `<span>📞 ${business.phone}</span>` : ''}
-                        <span class="category-tag">${category.name}</span>
-                    </div>
-                    
-                    <p class="business-description">${business.description || 'Local business serving Central Valley'}</p>
-                    
-                    <div class="business-actions">
-                        <button class="btn btn-quote" onclick="openQuoteModal('${business.id}', '${business.name.replace(/'/g, "\\'")}')">
-                            Request Quote
-                        </button>
-                        ${business.website ? `<a href="${business.website}" target="_blank" rel="noopener" class="btn btn-secondary">Website</a>` : ''}
-                    </div>
-                </article>
-            `;
-        }
-
-        // Open quote modal
-        window.openQuoteModal = function(businessId, businessName) {
-            document.getElementById('business_id').value = businessId;
-            document.getElementById('business_name').value = businessName;
-            document.getElementById('quote-modal').classList.add('active');
-            document.getElementById('customer_name').focus();
-        };
-
-        // Close modal
-        window.closeModal = function() {
-            document.getElementById('quote-modal').classList.remove('active');
-        };
-
-        // Handle quote submission
-        async function handleQuoteSubmit(e) {
-            e.preventDefault();
-            
-            const formData = {
-                business_id: document.getElementById('business_id').value,
-                customer_name: document.getElementById('customer_name').value,
-                customer_phone: document.getElementById('customer_phone').value,
-                customer_email: document.getElementById('customer_email').value,
-                message: `
-Service: ${document.getElementById('service_type').value}
-Time: ${document.getElementById('contact_time').value}
-Details: ${document.getElementById('message').value}
-                `.trim(),
-                status: 'new'
-            };
-
-            // Calculate lead score
-            let score = 50;
-            if (formData.customer_phone) score += 20;
-            if (formData.customer_email) score += 10;
-            if (document.getElementById('service_type').value !== 'other') score += 15;
-            if (document.getElementById('message').value.length > 20) score += 5;
-            
-            formData.score = score;
-
-            try {
-                const { data, error } = await supabase
-                    .from('leads')
-                    .insert([formData]);
-
-                if (error) throw error;
-
-                // Success
-                alert('Quote request sent! The business will contact you soon.');
-                closeModal();
-                document.getElementById('quote-form').reset();
-
-            } catch (error) {
-                console.error('Error submitting quote:', error);
-                alert('There was an error. Please try again.');
+                container.innerHTML = '<p style="text-align: center; padding: 40px;">No businesses yet. <a href="/submit" style="color: var(--accent);">Add your business</a></p>';
             }
         }
-
-        // Close modal on outside click
-        document.getElementById('quote-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'quote-modal') closeModal();
-        });
-
-        // Start
-        init().catch(console.error);
+        
+        init();
     </script>
 </body>
 </html>
