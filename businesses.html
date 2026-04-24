@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse verified local businesses in Central Valley. Find HVAC, plumbing, dental, automotive, and professional services in Manteca, Modesto, Stockton, Tracy.">
+    <meta name="keywords" content="Central Valley businesses, local directory, Manteca, Modesto, Stockton, Tracy, 209">
+    <title>Browse Businesses | Central Valley Locals</title>
+    <link rel="canonical" href="https://centralvalleylocals.com/businesses">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Central Valley Businesses",
+        "description": "Directory of local businesses in Central Valley",
+        "numberOfItems": 50
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">Central Valley Locals</a>
+            <nav class="nav">
+                <a href="/businesses" class="nav-link active">Businesses</a>
+                <a href="/categories" class="nav-link">Categories</a>
+                <a href="/events" class="nav-link">Events</a>
+                <a href="/submit" class="btn btn-primary">Add Your Business</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Browse Local Businesses</h1>
+                <p class="page-subtitle">Discover trusted businesses in Central Valley</p>
+            </section>
+
+            <!-- Filters -->
+            <section class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <!-- Categories loaded dynamically -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="city-filter">City</label>
+                    <select id="city-filter" class="filter-select">
+                        <option value="">All Cities</option>
+                        <option value="Manteca">Manteca</option>
+                        <option value="Modesto">Modesto</option>
+                        <option value="Stockton">Stockton</option>
+                        <option value="Tracy">Tracy</option>
+                        <option value="Lathrop">Lathrop</option>
+                        <option value="Turlock">Turlock</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>
+                        <input type="checkbox" id="featured-only">
+                        Featured Only
+                    </label>
+                </div>
+            </section>
+
+            <!-- Business Grid -->
+            <section class="business-grid" id="business-grid">
+                <!-- Businesses loaded dynamically -->
+                <div class="loading">Loading businesses...</div>
+            </section>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Central Valley Locals. Powered by <a href="https://cc3po.com">CC3PO</a></p>
+        </div>
+    </footer>
+
+    <!-- Supabase Client -->
+    <script type="module">
+        import { supabase, getBusinesses, getCategories } from './assets/js/supabase-client.js';
+
+        // State
+        let currentCategory = '';
+        let currentCity = '';
+        let featuredOnly = false;
+
+        // Initialize
+        async function init() {
+            // Load categories
+            const categories = await getCategories();
+            const categorySelect = document.getElementById('category-filter');
+            
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.id;
+                option.textContent = cat.name;
+                categorySelect.appendChild(option);
+            });
+
+            // Load businesses
+            await loadBusinesses();
+
+            // Event listeners
+            categorySelect.addEventListener('change', async (e) => {
+                currentCategory = e.target.value;
+                await loadBusinesses();
+            });
+
+            document.getElementById('city-filter').addEventListener('change', async (e) => {
+                currentCity = e.target.value;
+                await loadBusinesses();
+            });
+
+            document.getElementById('featured-only').addEventListener('change', async (e) => {
+                featuredOnly = e.target.checked;
+                await loadBusinesses();
+            });
+        }
+
+        // Load businesses
+        async function loadBusinesses() {
+            const grid = document.getElementById('business-grid');
+            grid.innerHTML = '<div class="loading">Loading businesses...</div>';
+
+            const options = {};
+            if (currentCategory) options.category = currentCategory;
+            if (currentCity) options.city = currentCity;
+            if (featuredOnly) options.featured = true;
+
+            const businesses = await getBusinesses(options);
+
+            if (businesses.length === 0) {
+                grid.innerHTML = '<div class="no-results">No businesses found. Try adjusting your filters.</div>';
+                return;
+            }
+
+            grid.innerHTML = businesses.map(business => {
+                const category = business.categories || { name: 'Uncategorized', slug: 'uncategorized' };
+                return `
+                    <article class="business-card">
+                        <div class="business-card-header">
+                            <span class="business-category">${category.name}</span>
+                            ${business.is_featured ? '<span class="featured-badge">⭐ Featured</span>' : ''}
+                        </div>
+                        <h3 class="business-name">
+                            <a href="/business/${business.slug}">${business.name}</a>
+                        </h3>
+                        <p class="business-description">${business.description || ''}</p>
+                        <div class="business-meta">
+                            ${business.city ? `<span class="business-location">📍 ${business.city}</span>` : ''}
+                            ${business.phone ? `<span class="business-phone">📞 ${business.phone}</span>` : ''}
+                        </div>
+                        <div class="business-actions">
+                            ${business.website ? `<a href="${business.website}" target="_blank" rel="noopener" class="btn btn-secondary">Website</a>` : ''}
+                            <a href="/business/${business.slug}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
